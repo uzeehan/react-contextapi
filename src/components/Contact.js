@@ -9,10 +9,10 @@ export class Contact extends Component {
                 {
                     (value) => (
                         <div>
-                            <h3>CONTACT INFO</h3>
+                            <h3>CONTACT INFO:</h3>
                             Name: {value.name} <br/>
                             Age: {value.age} <br/>
-                            Email: {value.email}
+                            Email: {value.email} 
                         </div>
                     )
                 }
