@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import Contacts from './components/Contacts';
 
-// createContext object
-const MyContext = React.createContext();
+// create a CONTEXT object
+const Context = React.createContext();
 
-export class Context extends Component {
+// create a CONTEXT PROVIDER
+export class Provider extends Component {
 
     state = {
-        name: 'John Doe',
+        name: 'Jenny Doe',
         age: 100,
-        location: 'Sydney' 
+        email: 'jenny@mail.com'
     }
-
-
-    render() {
+    render () {
         return (
-            <MyContext.Provider value="I'm a Context Provider">
-                {this.props.children}
-            </MyContext.Provider>
+            <Context.Provider value={ this.state }>
+                { this.props.children }
+            </Context.Provider>
         )
     }
 }
 
-export default Context;
+export const Consumer = Context.Consumer; 
 
+// export const Consumer = Context.Consumer;
+// export default Provider;

@@ -1,14 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Consumer } from '../Context';
 
 export class Contact extends Component {
-
     render() {
         return (
-            <div>
-                <h3>
-                    The contact name is : {this.props.name}
-                </h3>
-            </div>
+            // declare CONTEXT CONSUMER
+            <Consumer>
+                {
+                    (value) => (
+                        <div>
+                            <h3>CONTACT INFO</h3>
+                            Name: {value.name} <br/>
+                            Age: {value.age} <br/>
+                            Email: {value.email}
+                        </div>
+                    )
+                }
+            </Consumer>
         )
     }
 }
